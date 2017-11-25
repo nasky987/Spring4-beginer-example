@@ -1,12 +1,14 @@
 package sample.di.business.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import sample.di.business.domain.Product;
 
-@Component
+@Service
 public class ProductServiceImpl implements ProductService {
     @Autowired
+    @Qualifier("productDao")
     private ProductDao productDao;
 
     @Override
