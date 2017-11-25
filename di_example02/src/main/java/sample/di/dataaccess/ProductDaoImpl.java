@@ -1,6 +1,8 @@
 package sample.di.dataaccess;
 
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 import sample.di.business.domain.Product;
 import sample.di.business.service.ProductDao;
@@ -8,6 +10,8 @@ import sample.di.business.service.ProductDao;
 import java.util.HashMap;
 import java.util.Map;
 
+//@Scope(BeanDefinition.SCOPE_PROTOTYPE)
+@Scope(BeanDefinition.SCOPE_SINGLETON)
 @Primary
 @Repository("productDao")
 public class ProductDaoImpl implements ProductDao {
